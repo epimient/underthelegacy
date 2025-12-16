@@ -6,6 +6,7 @@
   <title>Contact | Under the Legacy</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 </head>
@@ -14,7 +15,9 @@
   <!-- Navigation -->
   <nav class="container-fluid py-4">
     <div class="container d-flex justify-content-between align-items-center">
-      <a href="index.html" class="logo">UNDER THE LEGACY</a>
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo_horizontal.png" alt="Under The Legacy Logo">
+      </a>
       <div class="nav-links">
         <a href="band.html">Band</a>
         <a href="album.html">Music</a>
@@ -35,28 +38,81 @@
     </div>
   </section>
 
-  <!-- Mailing List / Wishlist -->
-  <section id="mailing-list">
-    <div class="container text-center">
-      <h2 class="mb-3">Join the Wishlist</h2>
-      <p class="mb-4 mx-auto">
-        To join the wishlist for merch, or for any press/booking inquiries, please send us an email.
-      </p>
-      <a href="mailto:underthelegacyband@gmail.com" class="btn">underthelegacyband@gmail.com</a>
+  <!-- Contact Form -->
+  <section>
+    <div class="container">
+      <h2 class="mb-4 text-center">Send us a message</h2>
+      <form action="https://formspree.io/f/yourformid" method="POST" class="mx-auto" style="max-width: 600px;">
+        <p class="small text-muted text-center mb-4">
+          <i class="bi bi-info-circle me-2"></i>
+          Replace "yourformid" in the HTML action with your actual Formspree endpoint for the form to work.
+        </p>
+        <div class="mb-3">
+          <label for="name" class="form-label visually-hidden">Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label visually-hidden">Email address</label>
+          <input type="email" class="form-control" id="email" name="_replyto" placeholder="Your Email" required>
+        </div>
+        <div class="mb-3">
+          <label for="subject" class="form-label visually-hidden">Subject</label>
+          <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label visually-hidden">Message</label>
+          <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn">Send Message</button>
+        </div>
+      </form>
     </div>
   </section>
 
-  <!-- Contact Info -->
+  <!-- Mailing List / Wishlist -->
+  <section id="mailing-list">
+    <div class="container text-center">
+      <div class="row justify-content-center"> <!-- Added row and justify-content-center -->
+        <div class="col-md-8"> <!-- Added col-md-8 -->
+          <h2 class="mb-3">Join the Wishlist</h2>
+          <p class="mb-4 mx-auto">
+            To join the wishlist for merch, or for any press/booking inquiries, please send us an email.
+          </p>
+          <a href="mailto:underthelegacyband@gmail.com" class="btn">Join to Newsletter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Follow the Path -->
   <section class="section-dark">
-    <div class="container">
+    <div class="container text-center">
       <h2 class="mb-3">Follow the Path</h2>
-      <ul class="list-unstyled social-links">
-        <li><a href="https://www.instagram.com/underthelegacyband" target="_blank">Instagram</a></li>
-        <li><a href="#" target="_blank">YouTube</a></li>
-        <li><a href="#" target="_blank">Spotify</a></li>
-        <li><a href="#" target="_blank">Apple Music</a></li>
-        <li><a href="#" target="_blank">Bandcamp</a></li>
-      </ul>
+      <div class="social-links-container">
+        <a href="https://www.instagram.com/underthelegacy/" target="_blank" class="social-btn">
+          <i class="bi bi-instagram"></i>
+          <span class="visually-hidden">Instagram</span>
+        </a>
+        <a href="#" target="_blank" class="social-btn">
+          <i class="bi bi-youtube"></i>
+          <span class="visually-hidden">YouTube</span>
+        </a>
+        <a href="#" target="_blank" class="social-btn">
+          <i class="bi bi-spotify"></i>
+          <span class="visually-hidden">Spotify</span>
+        </a>
+        <a href="#" target="_blank" class="social-btn">
+          <i class="bi bi-apple"></i>
+          <span class="visually-hidden">Apple Music</span>
+        </a>
+        <a href="#" target="_blank" class="social-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-tidal" viewBox="0 0 16 16">
+            <path d="M2 0v3h3v3h3V3h3V0H2Zm3 5v3h3v3h3V8h3V5H5Z"/>
+          </svg>
+          <span class="visually-hidden">Tidal</span>
+        </a>
+      </div>
     </div>
   </section>
 

@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ashes of Eternity | Under the Legacy</title>
+  <title>Music | Under the Legacy</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 </head>
@@ -14,7 +15,9 @@
   <!-- Navigation -->
   <nav class="container-fluid py-4">
     <div class="container d-flex justify-content-between align-items-center">
-      <a href="index.html" class="logo">UNDER THE LEGACY</a>
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo_horizontal.png" alt="Under The Legacy Logo">
+      </a>
       <div class="nav-links">
         <a href="band.html">Band</a>
         <a href="album.html">Music</a>
@@ -25,66 +28,108 @@
     </div>
   </nav>
 
-  <!-- Album Intro -->
-  <section class="section-dark">
-    <div class="container">
-      <h1 class="mb-4">Ashes of Eternity</h1>
-      <p>
-        <em>In production</em>
-      </p>
-      <p>
-        <strong>Ashes of Eternity</strong> is the debut EP by Under the Legacy.  
-        A five-track ritual carved in distortion, repetition and decay.
-      </p>
-      <p>
-        The record explores themes of mortality, inner collapse and the persistence of memory,  
-        unfolding slowly like smoke trapped in a forgotten room.
-      </p>
+  <!-- Release Carousel -->
+  <div id="releaseCarousel" class="carousel slide release-carousel" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#releaseCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#releaseCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
     </div>
-  </section>
+    <div class="carousel-inner">
+      <!-- Slide 1: Ashes of Eternity EP -->
+      <div class="carousel-item active" style="background-image: url('assets/img/music/ashes.png');">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-caption-custom">
+          <p class="release-status">In Production</p>
+          <h1>Ashes of Eternity</h1>
+          <p>
+            The debut EP by Under the Legacy. A five-track ritual carved in distortion, repetition and decay, exploring themes of mortality, inner collapse and the persistence of memory.
+          </p>
+        </div>
+      </div>
+      <!-- Slide 2: Haunted by Shadows Single -->
+      <div class="carousel-item" style="background-image: url('assets/img/music/haunted.png');">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-caption-custom">
+          <p class="release-status">Coming Soon</p>
+          <h1>Haunted by Shadows</h1>
+          <p>
+            The first single. A slow-burning track built around hypnotic riffs and lyrics that deal with obsession, presence and the weight of unseen forces.
+          </p>
+          <a href="#" class="btn mt-3">Listen Now!</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#releaseCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#releaseCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
-  <!-- Tracklist -->
+  <!-- Platforms Section -->
   <section>
     <div class="container">
-      <h2 class="mb-4">Tracklist (Provisional)</h2>
-      <ol>
-        <li>Invocation</li>
-        <li>Static Prayer</li>
-        <li>Perdition</li>
-        <li>Haunted by Shadows</li>
-        <li>The Eternal</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Single -->
-  <section class="section-dark">
-    <div class="container">
-      <h2 class="mb-3">First Single</h2>
-      <p>
-        <strong>Haunted by Shadows</strong> will be released as the first glimpse into the world of <em>Ashes of Eternity</em>.
-      </p>
-      <p>
-        A slow-burning track built around hypnotic riffs and lyrics that deal with obsession, presence and the weight of unseen forces.
-      </p>
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <img src="assets/img/music/band2.svg" alt="Band Design" class="img-fluid platform-image">
+        </div>
+        <div class="col-lg-6 offset-lg-1">
+          <h2 class="mb-4">Listen</h2>
+          <p>Find our music on all major streaming platforms.</p>
+          <div class="platform-links">
+            <a href="#" class="platform-link" target="_blank">
+              <i class="bi bi-spotify"></i>
+              <span>Spotify</span>
+            </a>
+            <a href="#" class="platform-link" target="_blank">
+              <i class="bi bi-apple"></i>
+              <span>Apple Music</span>
+            </a>
+            <a href="#" class="platform-link" target="_blank">
+              <i class="bi bi-youtube"></i>
+              <span>YouTube</span>
+            </a>
+            <a href="#" class="platform-link" target="_blank">
+              <i class="bi bi-youtube"></i>
+              <span>YouTube Music</span>
+            </a>
+            <a href="#" class="platform-link" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-tidal" viewBox="0 0 16 16">
+                <path d="M2 0v3h3v3h3V3h3V0H2Zm3 5v3h3v3h3V8h3V5H5Z"/>
+              </svg>
+              <span>Tidal</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Physical Formats -->
-  <section>
+  <section class="section-dark">
     <div class="container">
-      <h2 class="mb-4">Physical Formats</h2>
-      <p>
-        Physical editions will be produced in limited quantities based on demand.
-      </p>
-      <ul class="list-unstyled">
-        <li>Red Vinyl LP — Limited Edition</li>
-        <li>Cassette Tape</li>
-      </ul>
-      <p>
-        Join the list to help shape the physical release.
-      </p>
-      <a href="#" class="btn">Join the Ritual</a>
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0"> <!-- Image column, order-lg-2 to place it on the right on large screens -->
+          <img src="assets/img/music/cover_ashes.jpg" alt="Vinyl Record Mockup" class="img-fluid platform-image">
+        </div>
+        <div class="col-lg-6 order-lg-1"> <!-- Text column, order-lg-1 to place it on the left on large screens -->
+          <h2 class="mb-4">Physical Formats</h2>
+          <p>
+            Physical editions will be produced in limited quantities based on demand.
+          </p>
+          <ul class="list-unstyled">
+            <li>Red Vinyl LP — Limited Edition</li>
+            <li>Cassette Tape</li>
+          </ul>
+          <p>
+            Join the list to help shape the physical release.
+          </p>
+          <a href="contact.html" class="btn">Join the Ritual</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -93,5 +138,6 @@
     <p class="small">© Under the Legacy</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>

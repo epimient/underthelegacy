@@ -37,3 +37,4 @@ The design is intentionally dark and atmospheric, drawing inspiration from 70s h
 
 *   The images for band members, the band group photo, and merchandise items are currently placeholders. To replace them, add your real images to the `assets/img/` directory and update the paths in the corresponding `.html` files.
 *   The contact/wishlist functionality on `contact.html` currently directs to an email address. This can be updated to an embedded form in the future by replacing the section with a valid `<iframe>` from a service like Google Forms.
+# underthelegacy

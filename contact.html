@@ -46,11 +46,17 @@
   <section>
     <div class="container">
       <h2 class="mb-4 text-center">Send us a message</h2>
-      <form action="https://formspree.io/f/yourformid" method="POST" class="mx-auto" style="max-width: 600px;">
-        <p class="small text-muted text-center mb-4">
-          <i class="bi bi-info-circle me-2"></i>
-          Replace "yourformid" in the HTML action with your actual Formspree endpoint for the form to work.
-        </p>
+      <div id="formSuccess" class="text-center d-none mb-5 mx-auto" style="max-width: 600px;">
+        <i class="bi bi-check-circle-fill text-success display-1 mb-3"></i>
+        <h3>Message Sent!</h3>
+        <p class="text-center">Thank you for reaching out. We will get back to you soon.</p>
+        <button class="btn btn-sm mt-3" onclick="location.reload()">Send Another</button>
+      </div>
+
+      <form id="contactForm"
+        action="https://script.google.com/macros/s/AKfycbxGWQnbeHuZL1qAHqWsrJ-tDyijPX1NdO4yTRmhhHK3yp4Fx4xQmUNh8noVwQDINr3BEA/exec"
+        method="POST" class="mx-auto" style="max-width: 600px;">
+
         <div class="mb-3">
           <label for="name" class="form-label visually-hidden">Name</label>
           <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
@@ -127,6 +133,7 @@
     <p class="small">© Under the Legacy</p>
   </footer>
 
+  <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>

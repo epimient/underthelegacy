@@ -588,3 +588,192 @@ body::after {
 .gallery-img-wrapper img:hover {
   transform: scale(1.05);
 }
+
+.past-show-card {
+  background: #0d0d0d;
+  border: 1px solid #1a1a1a;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.past-show-card:hover {
+  border-color: #8c304c;
+}
+
+.past-show-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.past-show-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.past-show-card:hover .past-show-img img {
+  transform: scale(1.05);
+}
+
+.past-show-body {
+  padding: 1rem;
+}
+
+.past-show-date {
+  font-size: 0.8rem;
+  color: #8c304c;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: 'Cinzel', serif;
+}
+
+.past-show-body h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.past-show-body p {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* =============================
+   Dark Modal
+   ============================= */
+
+.modal-content {
+  background-color: #0d0d0d;
+  border: 1px solid #333;
+}
+
+.modal-header {
+  background-color: #0d0d0d;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.modal-header .modal-title {
+  font-family: 'Cinzel', serif;
+  color: #e2e2e2;
+}
+
+.modal-body {
+  background-color: #0d0d0d;
+}
+
+.form-check-input {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+}
+
+.form-check-input:checked {
+  background-color: #8c304c;
+  border-color: #8c304c;
+}
+
+.form-check-label {
+  color: #e2e2e2;
+}
+
+/* =============================
+   Contact Popup / Chat Bubble
+   ============================= */
+
+.chat-bubble {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1050;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #8c304c;
+  color: #fff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(140, 48, 76, 0.4);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.chat-bubble:hover {
+  transform: scale(1.1);
+  background: #a83a5a;
+}
+
+.chat-bubble:active {
+  transform: scale(0.95);
+}
+
+.contact-popup {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.5rem;
+  z-index: 1049;
+  width: 340px;
+  max-height: 480px;
+  background: #0d0d0d;
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  display: none;
+  flex-direction: column;
+}
+
+.contact-popup.open {
+  display: flex;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  background: #0d0d0d;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.contact-popup-header h5 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  color: #e2e2e2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-popup-body {
+  padding: 1rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.contact-popup-body .form-control {
+  font-size: 0.85rem;
+}
+
+.contact-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+              url('../img/the_band.png') center / cover no-repeat;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+}

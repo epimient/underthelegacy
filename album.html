@@ -124,6 +124,11 @@
               <span>Tidal</span>
             </a>
           </div>
+
+          <div class="mt-4">
+            <iframe scrolling="no" style="border: 0;width: 100%;height: 50px;"
+              src="https://bandcamp.com/band_follow_button_deluxe/2151475072"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -142,18 +147,65 @@
           <p>
             Physical editions will be produced in limited quantities based on demand.
           </p>
-          <ul class="list-unstyled">
-            <li>Red Vinyl LP — Limited Edition</li>
-            <li>Cassette Tape</li>
-          </ul>
           <p>
             Join the list to help shape the physical release.
           </p>
-          <a href="contact.html?product=Physical%20Formats%20Waiting%20List" class="btn">Join the Ritual</a>
+
+          <button class="btn mt-3" data-bs-toggle="modal" data-bs-target="#waitlistModal">
+            Join the Ritual
+          </button>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Waitlist Modal -->
+  <div class="modal fade" id="waitlistModal" tabindex="-1" aria-labelledby="waitlistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="waitlistModalLabel">Claim Your Format</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div id="waitlistSuccess" class="success-message text-center d-none">
+            <i class="bi bi-check-circle-fill"></i>
+            <h3>Witness the Ritual</h3>
+            <p>You're on the list. We'll notify you when the physical editions are ready.</p>
+          </div>
+          <form id="waitlistForm">
+            <input type="hidden" name="form_type" value="wishlist">
+            <input type="hidden" name="product" id="waitlistProduct">
+
+            <p class="mb-2">Select your preferred format(s):</p>
+
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" value="Cassette Tape" id="fmt_cassette">
+              <label class="form-check-label" for="fmt_cassette">Cassette Tape</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" value="CD" id="fmt_cd">
+              <label class="form-check-label" for="fmt_cd">CD</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" value="Black Vinyl LP" id="fmt_black">
+              <label class="form-check-label" for="fmt_black">Black Vinyl LP</label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" value="Red Vinyl LP — Limited Edition" id="fmt_red">
+              <label class="form-check-label" for="fmt_red">Red Vinyl LP — Limited Edition</label>
+            </div>
+
+            <input type="text" class="form-control mb-2" name="name" placeholder="Your Name" required>
+            <input type="email" class="form-control mb-2" name="email" placeholder="Your Email" required>
+            <input type="tel" class="form-control mb-3" name="phone" placeholder="Your Phone (Optional)">
+
+            <button type="submit" class="btn w-100">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="py-5 text-center">

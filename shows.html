@@ -46,31 +46,82 @@
     </div>
   </section>
 
-  <!-- Upcoming Shows -->
+  <!-- Shows Section -->
   <section>
     <div class="container">
-      <h2 class="mb-4 text-center">Upcoming Rituals</h2>
-      <div class="row align-items-center">
-        <div class="col-lg-5 mb-5 mb-lg-0">
-          <img src="assets/img/shows/upcoming/mad_max.jpg" alt="MAD MAX Event Poster" class="img-fluid platform-image">
+      <!-- Filter Tabs -->
+      <div class="filter-container mb-5">
+        <button class="filter-btn show-tab-btn active" data-tab="upcoming">Upcoming Rituals</button>
+        <button class="filter-btn show-tab-btn" data-tab="past">Past Rituals</button>
+      </div>
+
+      <!-- Upcoming Shows Panel -->
+      <div class="show-tab-panel" data-panel="upcoming">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <img src="assets/img/shows/upcoming/mad_max.jpg" alt="MAD MAX Event Poster"
+              class="img-fluid platform-image">
+          </div>
+          <div class="col-lg-6 offset-lg-1">
+            <h3 class="mb-3">MAD MAX - Barranquilla</h3>
+            <p><strong>Fecha:</strong> 13 de marzo</p>
+            <p>
+              Lanzamiento del primer Cómic de heavy metal en Colombia, con un cartel brutal con dos bandas de la ciudad:
+              Majesties y Under The Legacy, y Virgin Killer (banda invitada celebrando 20 años de trayectoria) de
+              Bucaramanga.
+            </p>
+            <h4 class="mt-4">Boletas:</h4>
+            <ul class="list-unstyled">
+              <li>Preventa: $100k</li>
+              <li>Día del evento: $120k</li>
+              <li>Primeras 15 boletas: $80k</li>
+            </ul>
+            <p class="small">Más informes por redes sociales.</p>
+            <a href="https://www.facebook.com/metaldelsur.Barranquilla?locale=es_LA" class="btn mt-3">Want Tickets
+              Now!</a>
+          </div>
         </div>
-        <div class="col-lg-6 offset-lg-1">
-          <h3 class="mb-3">MAD MAX - Barranquilla</h3>
-          <p><strong>Fecha:</strong> 13 de marzo</p>
-          <p>
-            Lanzamiento del primer Cómic de heavy metal en Colombia, con un cartel brutal con dos bandas de la ciudad:
-            Majesties y Under The Legacy, y Virgin Killer (banda invitada celebrando 20 años de trayectoria) de
-            Bucaramanga.
-          </p>
-          <h4 class="mt-4">Boletas:</h4>
-          <ul class="list-unstyled">
-            <li>Preventa: $100k</li>
-            <li>Día del evento: $120k</li>
-            <li>Primeras 15 boletas: $80k</li>
-          </ul>
-          <p class="small">Más informes por redes sociales.</p>
-          <a href="https://www.facebook.com/metaldelsur.Barranquilla?locale=es_LA" class="btn mt-3">Want Tickets
-            Now!</a>
+      </div>
+
+      <!-- Past Shows Panel -->
+      <div class="show-tab-panel" data-panel="past" style="display: none;">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="past-show-card">
+              <div class="past-show-img">
+                <img src="assets/img/shows/past/1.jpg" alt="Halloween Ritual">
+              </div>
+              <div class="past-show-body">
+                <span class="past-show-date">October 31, 2024</span>
+                <h3 class="h5 mt-2">Halloween Ritual</h3>
+                <p class="mb-0 text-muted">Lava Club, Barranquilla</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="past-show-card">
+              <div class="past-show-img">
+                <img src="assets/img/shows/past/2.jpeg" alt="Fete de la Musique">
+              </div>
+              <div class="past-show-body">
+                <span class="past-show-date">June 21, 2024</span>
+                <h3 class="h5 mt-2">Fete de la Musique</h3>
+                <p class="mb-0 text-muted">Alianza Francesa, Barranquilla</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="past-show-card">
+              <div class="past-show-img">
+                <img src="assets/img/shows/past/3.jpg" alt="Underground Sessions">
+              </div>
+              <div class="past-show-body">
+                <span class="past-show-date">May 15, 2024</span>
+                <h3 class="h5 mt-2">Underground Sessions</h3>
+                <p class="mb-0 text-muted">Bourbon St, Barranquilla</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -79,36 +130,46 @@
   <!-- Live Photo Gallery -->
   <section class="section-dark">
     <div class="container">
-      <h2 class="mb-4 text-center">Past Performances</h2>
+      <h2 class="mb-4 text-center">Gallery</h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="gallery-img-wrapper">
-            <img src="assets/img/shows/past/1.jpg" alt="Live Performance Photo 1" class="platform-image">
+            <img src="assets/img/shows/past/1.jpg" alt="Gallery Photo 1" class="platform-image">
           </div>
         </div>
         <div class="col-md-4">
           <div class="gallery-img-wrapper">
-            <img src="assets/img/shows/past/2.jpeg" alt="Live Performance Photo 2" class="platform-image">
+            <img src="assets/img/shows/past/2.jpeg" alt="Gallery Photo 2" class="platform-image">
           </div>
         </div>
         <div class="col-md-4">
           <div class="gallery-img-wrapper">
-            <img src="assets/img/shows/past/3.jpg" alt="Live Performance Photo 3" class="platform-image">
+            <img src="assets/img/shows/past/3.jpg" alt="Gallery Photo 3" class="platform-image">
           </div>
         </div>
         <div class="col-md-4">
           <div class="gallery-img-wrapper">
-            <img src="assets/img/shows/past/4.png" alt="Live Performance Photo 4" class="platform-image">
+            <img src="assets/img/shows/past/4.png" alt="Gallery Photo 4" class="platform-image">
           </div>
         </div>
         <div class="col-md-4">
           <div class="gallery-img-wrapper">
-            <img src="assets/img/shows/past/5.png" alt="Live Performance Photo 5" class="platform-image">
+            <img src="assets/img/shows/past/5.png" alt="Gallery Photo 5" class="platform-image">
           </div>
         </div>
         <div class="col-md-4">
           <div class="gallery-img-wrapper">
-            <img src="assets/img/shows/past/6.jpg" alt="Live Performance Photo 6" class="platform-image">
+            <img src="assets/img/shows/past/6.jpg" alt="Gallery Photo 6" class="platform-image">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="gallery-img-wrapper">
+            <img src="assets/img/shows/past/7.png" alt="Gallery Photo 7" class="platform-image">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="gallery-img-wrapper">
+            <img src="assets/img/shows/past/8.png" alt="Gallery Photo 8" class="platform-image">
           </div>
         </div>
       </div>
@@ -120,6 +181,7 @@
     <p class="small">© Under the Legacy</p>
   </footer>
 
+  <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>

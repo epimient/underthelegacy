@@ -70,7 +70,8 @@
           <p class="product-desc">
             The official shirt representing our roots and first local tour across Barranquilla.
           </p>
-          <a href="contact.html?product=Local%20Tour%202024" class="btn btn-sm">Add to Wishlist</a>
+          <button class="btn btn-sm wishlist-trigger" data-bs-toggle="modal" data-bs-target="#wishlistModal"
+            data-product="Local Tour 2024">Add to Wishlist</button>
         </div>
 
         <!-- T-Shirt 2 -->
@@ -85,7 +86,8 @@
           <p class="product-desc">
             Exclusive commemorative shirt featuring our psychedelic Alianza Francesa performance design.
           </p>
-          <a href="contact.html?product=Fete%20de%20la%20Musique%202025" class="btn btn-sm">Add to Wishlist</a>
+          <button class="btn btn-sm wishlist-trigger" data-bs-toggle="modal" data-bs-target="#wishlistModal"
+            data-product="Fete de la Musique 2025">Add to Wishlist</button>
         </div>
 
         <!-- Poster 1 -->
@@ -100,7 +102,8 @@
           <p class="product-desc">
             The ultimate collector's item featuring the artwork from our very first live show.
           </p>
-          <a href="contact.html?product=The%20First%20Ritual%20Poster" class="btn btn-sm">Add to Wishlist</a>
+          <button class="btn btn-sm wishlist-trigger" data-bs-toggle="modal" data-bs-target="#wishlistModal"
+            data-product="The First Ritual Poster">Add to Wishlist</button>
         </div>
 
         <!-- T-Shirt 3 -->
@@ -115,7 +118,8 @@
           <p class="product-desc">
             Limited edition festival merch featuring the mystical sorcerer and shadows artwork.
           </p>
-          <a href="contact.html?product=Urbana%20Rock%20Festival%202025" class="btn btn-sm">Add to Wishlist</a>
+          <button class="btn btn-sm wishlist-trigger" data-bs-toggle="modal" data-bs-target="#wishlistModal"
+            data-product="Urbana Rock Festival 2025">Add to Wishlist</button>
         </div>
 
         <!-- T-Shirt 4 -->
@@ -132,7 +136,8 @@
           <p class="product-desc">
             Dark, visceral apparel inspired by our hit single from the Ashes of Eternity album.
           </p>
-          <a href="contact.html?product=Haunted%20By%20Shadows" class="btn btn-sm">Add to Wishlist</a>
+          <button class="btn btn-sm wishlist-trigger" data-bs-toggle="modal" data-bs-target="#wishlistModal"
+            data-product="Haunted By Shadows">Add to Wishlist</button>
         </div>
 
         <!-- T-Shirt 5 -->
@@ -147,7 +152,8 @@
           <p class="product-desc">
             Celebrate the release of our debut album with this golden "Ashes of Eternity" classic tee.
           </p>
-          <a href="contact.html?product=Ashes%20of%20Eternity" class="btn btn-sm">Add to Wishlist</a>
+          <button class="btn btn-sm wishlist-trigger" data-bs-toggle="modal" data-bs-target="#wishlistModal"
+            data-product="Ashes of Eternity">Add to Wishlist</button>
         </div>
 
         <!-- T-Shirt 6 -->
@@ -162,7 +168,8 @@
           <p class="product-desc">
             Emerging from the darkness, this classic black tee features the iconic skull and bat wings illustration.
           </p>
-          <a href="contact.html?product=Skull%20Bat" class="btn btn-sm">Add to Wishlist</a>
+          <button class="btn btn-sm wishlist-trigger" data-bs-toggle="modal" data-bs-target="#wishlistModal"
+            data-product="Skull Bat">Add to Wishlist</button>
         </div>
 
         <!-- Poster 2 -->
@@ -177,7 +184,8 @@
           <p class="product-desc">
             A vibrant, Art Nouveau-style collectible poster celebrating a legendary night of music.
           </p>
-          <a href="contact.html?product=Fete%20de%20la%20Musique%20Art%20Poster" class="btn btn-sm">Add to Wishlist</a>
+          <button class="btn btn-sm wishlist-trigger" data-bs-toggle="modal" data-bs-target="#wishlistModal"
+            data-product="Fete de la Musique Art Poster">Add to Wishlist</button>
         </div>
 
         <!-- Poster 3 -->
@@ -192,7 +200,8 @@
           <p class="product-desc">
             An electrifying poster featuring the bat design for our special Fête de la Musique performance.
           </p>
-          <a href="contact.html?product=Fete%20de%20la%20Musique%20Bat%20Poster" class="btn btn-sm">Add to Wishlist</a>
+          <button class="btn btn-sm wishlist-trigger" data-bs-toggle="modal" data-bs-target="#wishlistModal"
+            data-product="Fete de la Musique Bat Poster">Add to Wishlist</button>
         </div>
       </div>
     </div>
@@ -203,6 +212,44 @@
     <p class="small">© Under the Legacy</p>
   </footer>
 
+  <!-- Wishlist Modal -->
+  <div class="modal fade" id="wishlistModal" tabindex="-1" aria-labelledby="wishlistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="wishlistModalLabel">Add to Wishlist</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div id="wishlistSuccess" class="success-message text-center d-none">
+            <i class="bi bi-check-circle-fill"></i>
+            <h3>Added!</h3>
+            <p>We've received your inquiry. We'll contact you when production starts.</p>
+          </div>
+          <form id="wishlistForm">
+            <input type="hidden" name="form_type" value="wishlist">
+            <input type="hidden" name="product" id="wishlistProduct">
+            <div class="mb-3">
+              <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <input type="tel" class="form-control" name="phone" placeholder="Your Phone (Optional)">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" name="message" rows="3"
+                placeholder="Any special requests? (e.g., your t-shirt size)"></textarea>
+            </div>
+            <button type="submit" class="btn w-100">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js" defer></script>
 
 </body>

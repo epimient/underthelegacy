@@ -49,6 +49,14 @@ Este es un sitio web estático. Para verlo, simplemente abre cualquiera de los a
 
 El diseño es intencionalmente oscuro y atmosférico, inspirándose en el rock pesado de los 70, el cine de terror clásico y temas ocultistas. La paleta de colores, la tipografía y las imágenes trabajan juntas para crear una experiencia inmersiva que coincide con el sonido de la banda.
 
+## 📚 Documentación
+
+- [Arquitectura Técnica](docs/ARCHITECTURE.md) — Stack, sitemap, flujo de datos, descripción de archivos
+- [Sistema de Formularios](docs/FORMS.md) — Frontend + Google Apps Script + Google Sheets
+- [Guía de Despliegue](docs/DEPLOY.md) — GitHub Pages, Apps Script, actualización de URLs
+- [Sistema de Diseño](docs/DESIGN.md) — Colores, tipografía, componentes, layouts, efectos
+- [Roadmap de Mejoras](docs/ROADMAP.md) — Plan de evolución y objetivos 2026
+
 ## 📝 Notas
 
 *   Las imágenes para los miembros de la banda, la foto grupal y los artículos de mercancía son propias de la banda. Para reemplazarlos, agrega tus imágenes reales al directorio `assets/img/` y actualiza las rutas en los archivos `.html` correspondientes.

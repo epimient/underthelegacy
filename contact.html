@@ -33,7 +33,7 @@
   </nav>
 
   <!-- Contact Intro -->
-  <section class="section-dark">
+  <section class="contact-hero">
     <div class="container">
       <h1 class="mb-4">Contact</h1>
       <p>
@@ -42,55 +42,35 @@
     </div>
   </section>
 
-  <!-- Contact Form -->
-  <section>
-    <div class="container">
-      <h2 class="mb-4 text-center">Send us a message</h2>
-      <div id="formSuccess" class="text-center d-none mb-5 mx-auto" style="max-width: 600px;">
-        <i class="bi bi-check-circle-fill text-success display-1 mb-3"></i>
-        <h3>Message Sent!</h3>
-        <p class="text-center">Thank you for reaching out. We will get back to you soon.</p>
-        <button class="btn btn-sm mt-3" onclick="location.reload()">Send Another</button>
-      </div>
-
-      <form id="contactForm"
-        action="https://script.google.com/macros/s/AKfycbxGWQnbeHuZL1qAHqWsrJ-tDyijPX1NdO4yTRmhhHK3yp4Fx4xQmUNh8noVwQDINr3BEA/exec"
-        method="POST" class="mx-auto" style="max-width: 600px;">
-
-        <div class="mb-3">
-          <label for="name" class="form-label visually-hidden">Name</label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label visually-hidden">Email address</label>
-          <input type="email" class="form-control" id="email" name="_replyto" placeholder="Your Email" required>
-        </div>
-        <div class="mb-3">
-          <label for="subject" class="form-label visually-hidden">Subject</label>
-          <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label visually-hidden">Message</label>
-          <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message"
-            required></textarea>
-        </div>
-        <div class="text-center">
-          <button type="submit" class="btn">Send Message</button>
-        </div>
-      </form>
-    </div>
-  </section>
-
   <!-- Mailing List / Wishlist -->
   <section id="mailing-list">
     <div class="container text-center">
-      <div class="row justify-content-center"> <!-- Added row and justify-content-center -->
-        <div class="col-md-8"> <!-- Added col-md-8 -->
-          <h2 class="mb-3">Join the Wishlist</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h2 class="mb-3">Join the Ritual</h2>
           <p class="mb-4 mx-auto">
-            To join the wishlist for merch, or for any press/booking inquiries, please send us an email.
+            Subscribe to our mailing list for exclusive updates, early access to merch, and ritual announcements.
           </p>
-          <a href="mailto:underthelegacyband@gmail.com" class="btn">Join to Newsletter</a>
+
+          <div id="newsletterSuccess" class="success-message d-none">
+            <i class="bi bi-check-circle-fill"></i>
+            <h3>Welcome to the Coven</h3>
+            <p>You have been successfully added to our mailing list.</p>
+          </div>
+
+          <form id="newsletterForm" class="mx-auto" style="max-width: 450px;">
+            <input type="hidden" name="form_type" value="newsletter">
+            <div class="mb-3">
+              <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <input type="tel" class="form-control" name="phone" placeholder="Your Phone (Optional)">
+            </div>
+            <button type="submit" class="btn w-100">Subscribe</button>
+          </form>
         </div>
       </div>
     </div>
@@ -125,8 +105,40 @@
           <span class="visually-hidden">Tidal</span>
         </a>
       </div>
+      <div class="d-flex justify-content-center mt-4">
+        <iframe scrolling="no" style="border: 0;width: 280px;height: 50px;"
+          src="https://bandcamp.com/band_follow_button_deluxe/2151475072"></iframe>
+      </div>
     </div>
   </section>
+
+  <!-- Floating Chat Button -->
+  <button id="chatButton" class="chat-bubble" aria-label="Send us a message">
+    <i class="bi bi-chat-dots"></i>
+  </button>
+
+  <!-- Contact Popup -->
+  <div id="contactPopup" class="contact-popup">
+    <div class="contact-popup-header">
+      <h5 class="mb-0">Send us a message</h5>
+      <button id="chatClose" class="btn-close btn-close-white" aria-label="Close"></button>
+    </div>
+    <div id="formSuccess" class="text-center d-none p-4">
+      <i class="bi bi-check-circle-fill text-success display-5 mb-2"></i>
+      <h5>Message Sent!</h5>
+      <p class="small">Thank you for reaching out. We will get back to you soon.</p>
+      <button class="btn btn-sm mt-2" onclick="location.reload()">Send Another</button>
+    </div>
+    <form id="contactForm" class="contact-popup-body">
+      <input type="hidden" name="form_type" value="contact">
+      <input type="text" class="form-control mb-2" name="name" placeholder="Your Name" required>
+      <input type="email" class="form-control mb-2" name="email" placeholder="Your Email" required>
+      <input type="tel" class="form-control mb-2" name="phone" placeholder="Your Phone (Optional)">
+      <input type="text" class="form-control mb-2" name="subject" placeholder="Subject">
+      <textarea class="form-control mb-3" name="message" rows="3" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn w-100">Send Message</button>
+    </form>
+  </div>
 
   <!-- Footer -->
   <footer class="py-5 text-center">

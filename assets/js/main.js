@@ -250,19 +250,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // VIDEO GALLERY — Visual Rituals
   // =============================================
   const videoCards = document.querySelectorAll('.vcard');
-  const videoModal = document.getElementById('videoModal');
+  const videoModalEl = document.getElementById('videoModal');
 
-  if (videoCards.length > 0 && videoModal) {
+  if (videoCards.length > 0 && videoModalEl) {
+    let videoModal = null;
+
     videoCards.forEach(card => {
       card.addEventListener('click', () => {
         const videoId = card.dataset.videoId;
-        const iframe = videoModal.querySelector('iframe');
+        const iframe = videoModalEl.querySelector('iframe');
+
+        if (!videoModal) {
+          videoModal = new bootstrap.Modal(videoModalEl);
+        }
+
         iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+        videoModal.show();
       });
     });
 
-    videoModal.addEventListener('hidden.bs.modal', () => {
-      const iframe = videoModal.querySelector('iframe');
+    videoModalEl.addEventListener('hidden.bs.modal', () => {
+      const iframe = videoModalEl.querySelector('iframe');
       iframe.src = '';
     });
   }

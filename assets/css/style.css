@@ -71,6 +71,30 @@ nav {
   color: #8c304c;
 }
 
+/* Language Switcher */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid #333;
+}
+
+.lang-switcher a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  line-height: 1;
+  margin-left: 0;
+}
+
+.lang-switcher a.lang-active,
+.lang-switcher a:hover {
+  opacity: 1;
+}
+
 /* Hero Cover */
 .hero-cover {
   min-height: 100vh;

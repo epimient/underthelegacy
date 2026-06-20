@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Under the Legacy</title>
+  <title>Contacto | Under the Legacy</title>
 
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="alternate" hreflang="en" href="contact.html">
@@ -21,16 +21,16 @@
   <!-- Navigation -->
   <nav class="container-fluid py-4">
     <div class="container d-flex justify-content-between align-items-center">
-      <a href="index.html" class="logo">
+      <a href="index.es.html" class="logo">
         <img src="assets/img/logo_horizontal.png" alt="Under The Legacy Logo">
       </a>
       <div class="nav-links">
-        <a href="band.html">Band</a>
-        <a href="album.html">Music</a>
-        <a href="merch.html">Merch</a>
-        <a href="shows.html">Shows</a>
-        <a href="contact.html">Contact</a>
-        <span class="lang-switcher"><a href="contact.html" class="lang-active" title="English">🇬🇧</a><a href="contact.es.html" title="Español">🇨🇴</a></span>
+        <a href="band.es.html">Banda</a>
+        <a href="album.es.html">Música</a>
+        <a href="merch.es.html">Mercancía</a>
+        <a href="shows.es.html">Conciertos</a>
+        <a href="contact.es.html">Contacto</a>
+        <span class="lang-switcher"><a href="contact.html" title="English">🇬🇧</a><a href="contact.es.html" class="lang-active" title="Español">🇨🇴</a></span>
       </div>
     </div>
   </nav>
@@ -38,9 +38,9 @@
   <!-- Contact Intro -->
   <section class="contact-hero">
     <div class="container">
-      <h1 class="mb-4">Contact</h1>
+      <h1 class="mb-4">Contacto</h1>
       <p>
-        For booking, press, or to join the inner circle.
+        Para contrataciones, prensa, o unirte al círculo interno.
       </p>
     </div>
   </section>
@@ -50,29 +50,29 @@
     <div class="container text-center">
       <div class="row justify-content-center">
         <div class="col-md-8">
-          <h2 class="mb-3">Join the Ritual</h2>
+          <h2 class="mb-3">Únete al Ritual</h2>
           <p class="mb-4 mx-auto">
-            Subscribe to our mailing list for exclusive updates, early access to merch, and ritual announcements.
+            Suscríbete a nuestra lista de correo para recibir actualizaciones exclusivas, acceso anticipado a mercancía y anuncios rituales.
           </p>
 
           <div id="newsletterSuccess" class="success-message d-none">
             <i class="bi bi-check-circle-fill"></i>
-            <h3>Welcome to the Coven</h3>
-            <p>You have been successfully added to our mailing list.</p>
+            <h3>Bienvenido al Aquelarre</h3>
+            <p>Has sido agregado exitosamente a nuestra lista de correo.</p>
           </div>
 
           <form id="newsletterForm" class="mx-auto" style="max-width: 450px;">
             <input type="hidden" name="form_type" value="newsletter">
             <div class="mb-3">
-              <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+              <input type="text" class="form-control" name="name" placeholder="Tu Nombre" required>
             </div>
             <div class="mb-3">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+              <input type="email" class="form-control" name="email" placeholder="Tu Correo" required>
             </div>
             <div class="mb-3">
-              <input type="tel" class="form-control" name="phone" placeholder="Your Phone (Optional)">
+              <input type="tel" class="form-control" name="phone" placeholder="Tu Teléfono (Opcional)">
             </div>
-            <button type="submit" class="btn w-100">Subscribe</button>
+            <button type="submit" class="btn w-100">Suscribirse</button>
           </form>
         </div>
       </div>
@@ -82,7 +82,7 @@
   <!-- Follow the Path -->
   <section class="section-dark">
     <div class="container text-center">
-      <h2 class="mb-3">Follow the Path</h2>
+      <h2 class="mb-3">Sigue el Camino</h2>
       <div class="platform-icons">
         <a href="https://www.instagram.com/underthelegacy/" target="_blank" class="picon" title="Instagram"><i class="bi bi-instagram"></i></a>
         <a href="#" target="_blank" class="picon" title="YouTube"><i class="bi bi-youtube"></i></a>
@@ -103,30 +103,30 @@
   </section>
 
   <!-- Floating Chat Button -->
-  <button id="chatButton" class="chat-bubble" aria-label="Send us a message">
+  <button id="chatButton" class="chat-bubble" aria-label="Envíanos un mensaje">
     <i class="bi bi-chat-dots"></i>
   </button>
 
   <!-- Contact Popup -->
   <div id="contactPopup" class="contact-popup">
     <div class="contact-popup-header">
-      <h5 class="mb-0">Send us a message</h5>
-      <button id="chatClose" class="btn-close btn-close-white" aria-label="Close"></button>
+      <h5 class="mb-0">Envíanos un mensaje</h5>
+      <button id="chatClose" class="btn-close btn-close-white" aria-label="Cerrar"></button>
     </div>
     <div id="formSuccess" class="text-center d-none p-4">
       <i class="bi bi-check-circle-fill text-success display-5 mb-2"></i>
-      <h5>Message Sent!</h5>
-      <p class="small">Thank you for reaching out. We will get back to you soon.</p>
-      <button class="btn btn-sm mt-2" onclick="location.reload()">Send Another</button>
+      <h5>¡Mensaje Enviado!</h5>
+      <p class="small">Gracias por contactarnos. Te responderemos pronto.</p>
+      <button class="btn btn-sm mt-2" onclick="location.reload()">Enviar Otro</button>
     </div>
     <form id="contactForm" class="contact-popup-body">
       <input type="hidden" name="form_type" value="contact">
-      <input type="text" class="form-control mb-2" name="name" placeholder="Your Name" required>
-      <input type="email" class="form-control mb-2" name="email" placeholder="Your Email" required>
-      <input type="tel" class="form-control mb-2" name="phone" placeholder="Your Phone (Optional)">
-      <input type="text" class="form-control mb-2" name="subject" placeholder="Subject">
-      <textarea class="form-control mb-3" name="message" rows="3" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn w-100">Send Message</button>
+      <input type="text" class="form-control mb-2" name="name" placeholder="Tu Nombre" required>
+      <input type="email" class="form-control mb-2" name="email" placeholder="Tu Correo" required>
+      <input type="tel" class="form-control mb-2" name="phone" placeholder="Tu Teléfono (Opcional)">
+      <input type="text" class="form-control mb-2" name="subject" placeholder="Asunto">
+      <textarea class="form-control mb-3" name="message" rows="3" placeholder="Tu Mensaje" required></textarea>
+      <button type="submit" class="btn w-100">Enviar Mensaje</button>
     </form>
   </div>
 

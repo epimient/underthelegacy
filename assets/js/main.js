@@ -1,5 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  const isES = document.documentElement.lang === 'es';
+
+  const i18n = {
+    sending: isES ? 'Enviando...' : 'Sending...',
+    error: isES ? 'Algo salió mal. Intenta de nuevo.' : 'Something went wrong. Please try again.',
+    noFormat: isES ? 'Ningún formato seleccionado' : 'No format selected',
+    wishlistInquiry: isES ? 'Consulta de Lista: ' : 'Wishlist Inquiry: ',
+    wishlistTitle: isES ? 'Lista: ' : 'Wishlist: '
+  };
+
   // =============================================
   // APPS SCRIPT ENDPOINT
   // =============================================
@@ -16,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Loading state
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerText = 'Sending...';
+      submitBtn.innerText = i18n.sending;
     }
 
     fetch(APPS_SCRIPT_URL, {
@@ -32,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => {
         console.error('Error:', error);
-        alert('Something went wrong. Please try again.');
+        alert(i18n.error);
       })
       .finally(() => {
         if (submitBtn) {
@@ -54,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const subjectInput = document.getElementById('subject');
       const messageInput = document.getElementById('message');
       if (subjectInput) {
-        subjectInput.value = `Wishlist Inquiry: ${decodeURIComponent(product)}`;
+        subjectInput.value = i18n.wishlistInquiry + decodeURIComponent(product);
       }
       if (messageInput) {
         messageInput.focus();
@@ -127,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const checks = this.querySelectorAll('.form-check-input:checked');
         const formats = Array.from(checks).map(c => c.value).join(', ');
-        document.getElementById('waitlistProduct').value = formats || 'No format selected';
+        document.getElementById('waitlistProduct').value = formats || i18n.noFormat;
         submitForm(this, function (form) {
           form.classList.add('d-none');
           const successDiv = document.getElementById('waitlistSuccess');
@@ -188,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const productInput = wishlistModal.querySelector('#wishlistProduct');
         const modalTitle = wishlistModal.querySelector('#wishlistModalLabel');
         if (productInput) productInput.value = productName;
-        if (modalTitle) modalTitle.textContent = `Wishlist: ${productName}`;
+        if (modalTitle) modalTitle.textContent = i18n.wishlistTitle + productName;
       });
     });
 

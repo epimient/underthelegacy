@@ -561,31 +561,61 @@ body::after {
    Shows Page Additions
    ============================= */
 
-.gallery-img-wrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 100%;
-  /* Creates a square aspect ratio */
+/* =============================================
+   PHOTO GALLERY — LP Vinyl Inserts
+   ============================================= */
+
+.gcard {
+  background: #080808;
+  border: 3px solid #1a1a1a;
+  border-radius: 2px;
   overflow: hidden;
-  border: 1px solid #1a1a1a;
-  /* Consistent with other elements */
-  box-shadow: inset 0 0 15px 5px rgba(0, 0, 0, 0.7);
-  /* Consistent with other images */
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: gcardIn 0.5s ease forwards;
 }
 
-.gallery-img-wrapper img {
-  position: absolute;
-  top: 0;
-  left: 0;
+.gcard:nth-child(1) { animation-delay: 0.05s; }
+.gcard:nth-child(2) { animation-delay: 0.1s; }
+.gcard:nth-child(3) { animation-delay: 0.15s; }
+.gcard:nth-child(4) { animation-delay: 0.2s; }
+.gcard:nth-child(5) { animation-delay: 0.25s; }
+.gcard:nth-child(6) { animation-delay: 0.3s; }
+.gcard:nth-child(7) { animation-delay: 0.35s; }
+.gcard:nth-child(8) { animation-delay: 0.4s; }
+
+@keyframes gcardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gcard:hover {
+  border-color: #8c304c;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.gthumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #000;
+}
+
+.gthumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Ensures images fill the square, cropping as needed */
-  transition: transform 0.3s ease;
-  /* Optional: add a subtle zoom on hover */
+  display: block;
+  filter: grayscale(0.85) sepia(0.25) contrast(1.15) brightness(0.85);
+  transition: filter 0.6s ease, transform 0.6s ease;
 }
 
-.gallery-img-wrapper img:hover {
+.gcard:hover .gthumb img {
+  filter: grayscale(0) sepia(0) contrast(1) brightness(1);
   transform: scale(1.05);
 }
 

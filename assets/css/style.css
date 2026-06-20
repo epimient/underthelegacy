@@ -777,3 +777,264 @@ body::after {
   display: flex;
   align-items: center;
 }
+
+/* =============================================
+   VIDEO GALLERY — Visual Rituals
+   ============================================= */
+
+.visual-rituals {
+  padding: 90px 0;
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-ornament {
+  display: block;
+  color: #8c304c;
+  font-size: 0.75rem;
+  letter-spacing: 10px;
+  margin-bottom: 12px;
+  opacity: 0.7;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: #e2e2e2;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin-bottom: 0;
+}
+
+.section-divider {
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: #8c304c;
+  margin: 18px auto 0;
+}
+
+/* Grid 2x2 */
+.vgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Video Card — LP Gatefold Style */
+.vcard {
+  background: #080808;
+  border: 3px solid #1a1a1a;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: vcardIn 0.5s ease forwards;
+}
+
+.vcard:nth-child(1) { animation-delay: 0.05s; }
+.vcard:nth-child(2) { animation-delay: 0.15s; }
+.vcard:nth-child(3) { animation-delay: 0.25s; }
+.vcard:nth-child(4) { animation-delay: 0.35s; }
+
+@keyframes vcardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vcard:hover {
+  border-color: #8c304c;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+/* Thumbnail — vintage vinyl photo treatment */
+.vthumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+  border-bottom: 3px solid #1a1a1a;
+  transition: border-color 0.4s ease;
+}
+
+.vcard:hover .vthumb {
+  border-bottom-color: #8c304c;
+}
+
+.vthumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.85) sepia(0.25) contrast(1.15) brightness(0.85);
+  transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+.vcard:hover .vthumb img {
+  filter: grayscale(0) sepia(0) contrast(1) brightness(1);
+  transform: scale(1.05);
+}
+
+/* Play sigil — ⊛ circle with cross */
+.vplay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.vplay::before {
+  content: '';
+  width: 56px;
+  height: 56px;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 0 0 rgba(140,48,76,0);
+}
+
+.vplay::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-top: 2px solid rgba(255,255,255,0.6);
+  border-right: 2px solid rgba(255,255,255,0.6);
+  transform: rotate(45deg);
+  margin-left: 4px;
+  transition: all 0.4s ease;
+}
+
+.vcard:hover .vplay::before {
+  border-color: #8c304c;
+  background: rgba(140,48,76,0.2);
+  box-shadow: 0 0 20px rgba(140,48,76,0.3);
+  transform: scale(1.1);
+}
+
+.vcard:hover .vplay::after {
+  border-color: #8c304c;
+}
+
+/* Video info — LP gatefold typography */
+.vinfo {
+  padding: 18px 20px 20px;
+  text-align: center;
+}
+
+.vtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  color: #ddd;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 10px;
+  transition: color 0.4s ease;
+}
+
+.vcard:hover .vtitle {
+  color: #8c304c;
+}
+
+/* Expanding line */
+.vline {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #8c304c;
+  margin: 0 auto 10px;
+  transition: width 0.4s ease;
+}
+
+.vcard:hover .vline {
+  width: 100%;
+}
+
+/* Meta: tag + year */
+.vmeta {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+.vcard:hover .vmeta {
+  color: #888;
+}
+
+.vbullet {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #8c304c;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.vsep {
+  margin: 0 8px;
+  opacity: 0.4;
+}
+
+/* Video Modal — Cinematic Player */
+.modal-video .modal-dialog {
+  max-width: 960px;
+}
+
+.modal-video .modal-content {
+  background: #000;
+  border: 1px solid #1a1a1a;
+  border-radius: 0;
+  box-shadow: 0 0 50px rgba(140,48,76,0.12);
+}
+
+.modal-video .modal-body {
+  padding: 0;
+}
+
+.vwrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.vwrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vgrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    letter-spacing: 4px;
+  }
+
+  .vtitle {
+    font-size: 0.85rem;
+  }
+}

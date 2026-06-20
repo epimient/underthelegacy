@@ -246,4 +246,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // =============================================
+  // VIDEO GALLERY — Visual Rituals
+  // =============================================
+  const videoCards = document.querySelectorAll('.vcard');
+  const videoModal = document.getElementById('videoModal');
+
+  if (videoCards.length > 0 && videoModal) {
+    videoCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const videoId = card.dataset.videoId;
+        const iframe = videoModal.querySelector('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+      });
+    });
+
+    videoModal.addEventListener('hidden.bs.modal', () => {
+      const iframe = videoModal.querySelector('iframe');
+      iframe.src = '';
+    });
+  }
+
 });

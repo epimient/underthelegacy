@@ -1,63 +1,156 @@
-# Under The Legacy - Sitio Web Oficial
+# Under The Legacy — Official Website
 
-> Un sitio web promocional estático para la banda de heavy psych / stoner doom, Under The Legacy.
+Static promotional website for the heavy psych / stoner doom band Under The Legacy. Built as a multi-page, fully responsive site with a strong visual identity rooted in occult rock aesthetics. Zero build tools, zero runtime dependencies — pure static HTML/CSS/JS with a serverless Google Apps Script backend for form handling.
 
-Este proyecto es un sitio web de múltiples páginas, totalmente responsivo, diseñado para servir como la presencia digital oficial de la banda. Está construido con un enfoque en una fuerte identidad visual que refleja la estética oscura y de "occult rock" de la banda.
+---
 
-## ✨ Características
+## Pages
 
-*   **Página de Inicio:** Una página de aterrizaje con imagen de héroe a pantalla completa, navegación principal y llamadas a la acción.
-*   **Página de la Banda:** Una página biográfica completa que incluye:
-    *   La historia de origen de la banda y su identidad artística en un diseño de dos columnas.
-    *   Una foto grupal visualmente estilizada.
-    *   Una cuadrícula responsiva de perfiles de miembros con descripciones que aparecen al pasar el cursor y enlaces a cuentas individuales de Instagram.
-*   **Página de Merch:** Una galería estilo e-commerce funcional para conceptos de mercancía.
-    *   Cuenta con un filtro interactivo para diferentes categorías de productos (Camisetas, Pósters), impulsado por JavaScript puro.
-    *   Incluye un efecto hover de dos imágenes para cada producto (ej. vista frontal/trasera).
-    *   Un sistema de "lista de deseos" que dirige a los fans interesados al correo de contacto de la banda para medir el interés antes de la producción.
-*   **Páginas de Música, Shows y Contacto:** Páginas dedicadas con información sobre lanzamientos, presentaciones en vivo y detalles de contacto.
+| Page | Purpose | Key Features |
+|---|---|---|
+| `index.html` | Landing page | Fullscreen video hero, logo, tagline, CTA links to Music and Shows |
+| `band.html` | Biography + Members | Two-column history layout, band group photo, "The Coven" member cards with grayscale hover revealing descriptions and Instagram links |
+| `album.html` | Music releases | Bootstrap carousel with release slides (EP, single, comic), streaming platform links, physical format waitlist modal with format checkboxes (cassette, CD, vinyl) |
+| `merch.html` | Product catalog | CSS Grid product cards with front/back image hover swap, category filter (All / T-Shirts / Posters), wishlist modal that pre-fills product name into contact form via URL parameter |
+| `shows.html` | Live dates + Gallery | Tabbed upcoming/past shows, past show cards with 16:9 thumbnails and hover zoom, photo gallery grid with inset shadow and hover scale |
+| `contact.html` | Contact + Newsletter | Newsletter signup section, floating chat bubble popup for direct messages, social media link buttons, URL parameter auto-fill for wishlist inquiries |
 
-### Funcionalidad de Formularios y Lista de Deseos
+---
 
-El sitio cuenta con un sistema de contacto dinámico integrado con Google Apps Script.
+## Technical Architecture
 
-1.  **Formulario de Contacto:**
-    *   El formulario en `contact.html` envía datos mediante una petición POST a un **Google Apps Script Web App**.
-    *   Esto permite recibir mensajes directamente en una hoja de cálculo o correo electrónico sin necesidad de un servidor backend tradicional (PHP, Node.js, etc.).
-    *   El script maneja la validación y el envío, y el frontend muestra mensajes de éxito o error sin recargar la página gracias a `fetch()`.
+### Stack
 
-2.  **Lista de Deseos (Wishlist):**
-    *   En la página de **Merch**, cada producto tiene un botón de "Add to Wishlist".
-    *   Este botón es un enlace a la página de contacto que incluye un parámetro URL: `contact.html?product=NombreDelProducto`.
-    *   **Lógica en JavaScript (`main.js`):** Al cargar la página de contacto, el script detecta este parámetro. Si existe:
-        *   Pre-rellena el campo "Asunto" (Subject) del formulario con el texto: `Wishlist Inquiry: NombreDelProducto`.
-        *   Automáticamente pone el foco en el campo de "Mensaje" para que el usuario pueda escribir inmediatamente.
+| Layer | Technology |
+|---|---|
+| Markup | HTML5 |
+| Styling | CSS3 + Bootstrap 5.3.3 |
+| Icons | Bootstrap Icons 1.11.3 |
+| Typography | Google Fonts (Cinzel + Inter) |
+| Frontend logic | Vanilla JavaScript (ES6) |
+| Backend | Google Apps Script (serverless) |
+| Database | Google Sheets |
+| Hosting | GitHub Pages |
+| Version control | Git |
 
-## 🛠️ Tecnologías Usadas
+### Structure
 
-*   **HTML5**
-*   **CSS3**
-*   **Bootstrap 5:** Para la base del diseño responsivo y la cuadrícula.
-*   **Vanilla JavaScript:** Para el filtro de mercancía y la lógica del formulario/parámetros URL.
-*   **Google Fonts:** Para tipografía personalizada (`Cinzel` & `Inter`).
+No local dependencies. No package manager, bundler, or task runner. All external resources loaded via CDN. Navigation and footer are duplicated across all six HTML files — there is no template or partial system.
 
-## 🚀 Cómo Ver el Sitio
+```
+/
+  index.html
+  band.html
+  album.html
+  merch.html
+  shows.html
+  contact.html
+  README.md
+  assets/
+    css/style.css       (779 lines, single stylesheet)
+    js/main.js          (249 lines, single script)
+    img/                (band photos, merch product images, show posters, music artwork)
+  docs/
+    ARCHITECTURE.md     — full technical documentation
+    DESIGN.md           — design system specification
+    FORMS.md            — form system documentation
+    DEPLOY.md           — deployment guide
+    ROADMAP.md          — evolution plan and 2026 goals
+    Code.gs             — Google Apps Script backend
+```
 
-Este es un sitio web estático. Para verlo, simplemente abre cualquiera de los archivos `.html` (por ejemplo, `index.html`) en un navegador web moderno. No se requiere servidor.
+### External Dependencies (CDN)
 
-## 🎨 Diseño y Estética
+| Resource | Loaded on |
+|---|---|
+| Bootstrap CSS 5.3.3 | All pages |
+| Bootstrap JS Bundle 5.3.3 | `album.html`, `merch.html` |
+| Bootstrap Icons 1.11.3 | `album.html`, `contact.html` |
+| Google Fonts (Cinzel + Inter) | All pages |
 
-El diseño es intencionalmente oscuro y atmosférico, inspirándose en el rock pesado de los 70, el cine de terror clásico y temas ocultistas. La paleta de colores, la tipografía y las imágenes trabajan juntas para crear una experiencia inmersiva que coincide con el sonido de la banda.
+### JavaScript Loading Strategy
 
-## 📚 Documentación
+`index.html` and `band.html` load no JavaScript at all — they are purely CSS-driven for optimal landing page performance. The other pages load `main.js` (deferred) only where interactivity is needed.
 
-- [Arquitectura Técnica](docs/ARCHITECTURE.md) — Stack, sitemap, flujo de datos, descripción de archivos
-- [Sistema de Formularios](docs/FORMS.md) — Frontend + Google Apps Script + Google Sheets
-- [Guía de Despliegue](docs/DEPLOY.md) — GitHub Pages, Apps Script, actualización de URLs
-- [Sistema de Diseño](docs/DESIGN.md) — Colores, tipografía, componentes, layouts, efectos
-- [Roadmap de Mejoras](docs/ROADMAP.md) — Plan de evolución y objetivos 2026
+---
 
-## 📝 Notas
+## Data Flow — Form System
 
-*   Las imágenes para los miembros de la banda, la foto grupal y los artículos de mercancía son propias de la banda. Para reemplazarlos, agrega tus imágenes reales al directorio `assets/img/` y actualiza las rutas en los archivos `.html` correspondientes.
-*   La funcionalidad de contacto actualmente apunta a un script de Google Apps (`script.google.com`). Asegúrate de que el endpoint esté activo y configurado correctamente para recibir los envíos.
+The site has no traditional backend. All form submissions (contact, newsletter, merch wishlist, album waitlist) are handled via a Google Apps Script Web App endpoint.
+
+```
+User submits form
+       |
+       v
+JavaScript (main.js) intercepts submit (e.preventDefault())
+       |
+       +-- Creates FormData from all fields
+       +-- Disables button, shows "Sending..."
+       |
+       v
+fetch(APPS_SCRIPT_URL, { method: 'POST', body: FormData, mode: 'no-cors' })
+       |
+       v
+Google Apps Script (Code.gs :: doPost)
+       |
+       +-- Reads form_type: 'contact' | 'newsletter' | 'wishlist'
+       +-- Writes row to the corresponding sheet tab
+       +-- Returns JSON { result: "success", type: formType }
+       |
+       v
+Frontend (opaque response due to no-cors mode)
+       |
+       +-- Resets form
+       +-- Shows success message
+       +-- Re-enables submit button
+```
+
+Three sheet tabs are auto-created: **Contacts**, **Newsletter**, **Wishlist**.
+
+### Wishlist URL Parameter System
+
+When a user clicks "Add to Wishlist" on the merch page, they are directed to `contact.html?product=ProductName`. The JavaScript on the contact page reads the URL parameter, pre-fills the subject field with "Wishlist Inquiry: ProductName", and sets focus to the message textarea.
+
+---
+
+## Design System
+
+The visual identity communicates the band's genre through every design decision: absolute black foundations, crimson accent (`#8c304c`), vintage grain texture, ritualistic typography, and image treatments ranging from full grayscale to partial color reveal on interaction.
+
+**Key principles:**
+- Dark, atmospheric, immersive — inspired by 70s heavy rock, classic horror cinema, and occult iconography
+- Single saturated color (`#8c304c`) used sparingly for blood/sacrifice connotations
+- SVG noise overlay (`feTurbulence`) for analog film grain texture at zero HTTP cost
+- Square corners on all UI elements — hard edges communicate heaviness
+- Ritualistic semantic naming: "The Coven", "Forged Offerings", "Live Rituals", "Join the Ritual"
+
+Full design system specification: [docs/DESIGN.md](docs/DESIGN.md)
+
+---
+
+## Documentation
+
+- [Technical Architecture](docs/ARCHITECTURE.md) — Stack, sitemap, file structure, data flow, CDN dependencies
+- [Design System](docs/DESIGN.md) — Color palette, typography, component library, image treatment, effects, layout patterns
+- [Form System](docs/FORMS.md) — Frontend + Google Apps Script + Google Sheets schemas, `no-cors` limitations
+- [Deployment Guide](docs/DEPLOY.md) — GitHub Pages setup, Apps Script deploy, URL configuration
+- [Roadmap](docs/ROADMAP.md) — Evolution plan, community-building goals, 2026 quantitative targets
+- [Backend Script](docs/Code.gs) — Google Apps Script source code for serverless form handling
+
+---
+
+## Local Development
+
+This is a static site. No server required — open any `.html` file directly in a modern browser.
+
+**To replace assets:** Add images to `assets/img/` (or the appropriate subdirectory) and update the `src` attributes in the corresponding HTML files.
+
+**To configure the form endpoint:** Update the `APPS_SCRIPT_URL` constant in `assets/js/main.js` (line 6) and the fallback `action` attribute in `contact.html` (line 57) with your deployed Google Apps Script Web App URL.
+
+---
+
+## Notes
+
+- Band member photos, group photos, and merchandise images are original assets. Replacements should preserve the same filenames or update corresponding HTML `src` paths.
+- The contact form currently points to an active Google Apps Script endpoint. Verify the endpoint is deployed and accessible before any public launch.
+- There is one orphaned file (`assets/img/ 2.png`) not referenced in any HTML page — it can be safely removed.

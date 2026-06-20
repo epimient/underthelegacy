@@ -392,44 +392,98 @@ body::after {
 }
 
 /* =============================
-   Album Page Additions
+   Album Page — Vinyl Hero
    ============================= */
 
-.release-carousel {
-  border-bottom: 1px solid #1a1a1a;
-}
-
-.release-carousel .carousel-item {
-  min-height: 75vh;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative;
-  padding: 90px 0;
-  text-align: center;
-}
-
-.release-carousel .carousel-item.active {
+.vinyl-hero {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  background: radial-gradient(ellipse at 30% 50%, #0B1017, #05080D 70%, #000);
+  border-bottom: 1px solid #1a1a1a;
+  padding: 120px 0 90px;
 }
 
-.release-carousel .carousel-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+.vinyl-layout {
+  display: flex;
+  align-items: center;
+  gap: 60px;
 }
 
-.release-carousel .carousel-caption-custom {
+/* --- Vinyl Disc --- */
+
+.vinyl-disc {
   position: relative;
-  z-index: 2;
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 0 15px;
+  width: 400px;
+  height: 400px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #111;
+  box-shadow:
+    0 0 0 3px #1a1a1a,
+    0 20px 60px rgba(0,0,0,0.7),
+    inset 0 0 40px rgba(0,0,0,0.5);
+  animation: vinylSpin 12s linear infinite;
 }
 
-.release-carousel .release-status {
+.vinyl-disc:hover {
+  animation-play-state: paused;
+}
+
+@keyframes vinylSpin {
+  to { transform: rotate(360deg); }
+}
+
+.vinyl-grooves {
+  position: absolute;
+  inset: 15%;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 2px #1a1a1a,
+    inset 0 0 0 15px #181818,
+    inset 0 0 0 17px #222,
+    inset 0 0 0 30px #181818,
+    inset 0 0 0 32px #222,
+    inset 0 0 0 45px #181818,
+    inset 0 0 0 47px #222,
+    inset 0 0 0 60px #181818,
+    inset 0 0 0 62px #222;
+}
+
+.vinyl-spindle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  z-index: 3;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.vinyl-label-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- Info Panel --- */
+
+.vinyl-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.vinyl-info .release-status {
   font-family: 'Cinzel', serif;
   letter-spacing: 3px;
   font-size: 0.9rem;
@@ -438,12 +492,171 @@ body::after {
   margin-bottom: 1rem;
 }
 
-.release-carousel h1 {
+.vinyl-info h1 {
   margin-bottom: 1rem;
 }
 
-.release-carousel .carousel-indicators [data-bs-target] {
-  background-color: #fff;
+.vinyl-desc {
+  font-weight: 300;
+  line-height: 1.8;
+  max-width: 560px;
+}
+
+/* --- Tracklist --- */
+
+.tracklist {
+  margin-top: 30px;
+  border-top: 1px solid #1a1a1a;
+  max-width: 520px;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #1a1a1a;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.track:hover {
+  background: rgba(255,255,255,0.05);
+  transform: translateX(4px);
+}
+
+.track-active {
+  border-left-color: #D62828;
+  background: rgba(255,255,255,0.08);
+}
+
+.track-idx {
+  width: 40px;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 300;
+}
+
+.track-title {
+  flex: 1;
+  letter-spacing: 0.5px;
+}
+
+.track-duration {
+  color: #666;
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+/* --- Small Vinyl (Physical Formats) --- */
+
+.formats-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.formats-visual .platform-image {
+  max-width: 320px;
+}
+
+.vinyl-disc-sm {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #111;
+  box-shadow:
+    0 0 0 2px #1a1a1a,
+    0 10px 30px rgba(0,0,0,0.5),
+    inset 0 0 20px rgba(0,0,0,0.5);
+  animation: vinylSpin 12s linear infinite;
+}
+
+.vinyl-disc-sm:hover {
+  animation-play-state: paused;
+}
+
+.vinyl-grooves-sm {
+  position: absolute;
+  inset: 15%;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 1px #1a1a1a,
+    inset 0 0 0 8px #181818,
+    inset 0 0 0 10px #222,
+    inset 0 0 0 18px #181818,
+    inset 0 0 0 20px #222,
+    inset 0 0 0 28px #181818,
+    inset 0 0 0 30px #222;
+}
+
+.vinyl-spindle-sm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ccc;
+  z-index: 3;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.vinyl-label-sm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 991px) {
+  .vinyl-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+  .vinyl-disc {
+    width: 280px;
+    height: 280px;
+  }
+  .vinyl-info h1 {
+    font-size: 2rem;
+  }
+  .vinyl-desc {
+    max-width: none;
+  }
+  .tracklist {
+    max-width: none;
+  }
+  .formats-visual {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 575px) {
+  .vinyl-disc {
+    width: 220px;
+    height: 220px;
+  }
+  .vinyl-disc-sm {
+    width: 140px;
+    height: 140px;
+  }
+  .track-idx {
+    width: 30px;
+  }
 }
 
 /* Platform Links */

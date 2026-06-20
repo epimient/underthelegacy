@@ -32,62 +32,54 @@
     </div>
   </nav>
 
-  <!-- Release Carousel -->
-  <div id="releaseCarousel" class="carousel slide release-carousel" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#releaseCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-        aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#releaseCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#releaseCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <!-- Slide 1: Ashes of Eternity EP -->
-      <div class="carousel-item active" style="background-image: url('assets/img/music/ashes.png');">
-        <div class="carousel-overlay"></div>
-        <div class="carousel-caption-custom">
+  <!-- Vinyl Hero -->
+  <section class="vinyl-hero">
+    <div class="container">
+      <div class="vinyl-layout">
+        <div class="vinyl-disc">
+          <div class="vinyl-grooves"></div>
+          <div class="vinyl-spindle"></div>
+          <img src="assets/img/music/ashes.png" alt="Ashes of Eternity" class="vinyl-label-img">
+        </div>
+        <div class="vinyl-info">
           <p class="release-status">In Production</p>
           <h1>Ashes of Eternity</h1>
-          <p>
+          <p class="vinyl-desc">
             The debut EP by Under the Legacy. A five-track ritual carved in distortion, repetition and decay, exploring
             themes of mortality, inner collapse and the persistence of memory.
           </p>
-        </div>
-      </div>
-      <!-- Slide 2: The Eternal Single -->
-      <div class="carousel-item" style="background-image: url('assets/img/music/haunted.png');">
-        <div class="carousel-overlay"></div>
-        <div class="carousel-caption-custom">
-          <p class="release-status">Coming Soon</p>
-          <h1>The Eternal</h1>
-          <p>
-            The first single. A slow-burning track built around hypnotic riffs and lyrics that deal with obsession,
-            presence and the weight of unseen forces.
-          </p>
-          <a href="#" class="btn mt-3">Listen Now!</a>
-        </div>
-      </div>
-      <!-- Slide 3: Mini Comic Announcement -->
-      <div class="carousel-item" style="background-image: url('assets/img/music/comic_news.png');">
-        <div class="carousel-overlay"></div>
-        <div class="carousel-caption-custom">
-          <p class="release-status">Special Announcement</p>
-          <h1>The Forbidden Scroll</h1>
-          <p>
-            A limited edition mini comic exploring the dark lore behind "Ashes of Eternity". Coming exclusively with the
-            physical release.
-          </p>
+          <div class="tracklist">
+            <div class="track track-active">
+              <span class="track-idx">01</span>
+              <span class="track-title">Invocation</span>
+              <span class="track-duration">2:30</span>
+            </div>
+            <div class="track">
+              <span class="track-idx">02</span>
+              <span class="track-title">From the Deep</span>
+              <span class="track-duration">5:15</span>
+            </div>
+            <div class="track">
+              <span class="track-idx">03</span>
+              <span class="track-title">Velvet Dust</span>
+              <span class="track-duration">4:45</span>
+            </div>
+            <div class="track">
+              <span class="track-idx">04</span>
+              <span class="track-title">Haunted by Shadows</span>
+              <span class="track-duration">6:20</span>
+            </div>
+            <div class="track">
+              <span class="track-idx">05</span>
+              <span class="track-title">The Eternal</span>
+              <span class="track-duration">5:34</span>
+            </div>
+          </div>
+          <a href="#" class="btn mt-4">Listen Now!</a>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#releaseCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#releaseCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+  </section>
 
   <!-- Platforms Section -->
   <section>
@@ -139,8 +131,14 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
-          <!-- Image column, order-lg-2 to place it on the right on large screens -->
-          <img src="assets/img/music/cover_ashes.jpg" alt="Vinyl Record Mockup" class="img-fluid platform-image" loading="lazy">
+          <div class="formats-visual">
+            <img src="assets/img/music/cover_ashes.jpg" alt="Vinyl Record Mockup" class="img-fluid platform-image" loading="lazy">
+            <div class="vinyl-disc-sm">
+              <div class="vinyl-grooves-sm"></div>
+              <div class="vinyl-spindle-sm"></div>
+              <img src="assets/img/music/ashes.png" alt="Ashes of Eternity" class="vinyl-label-sm">
+            </div>
+          </div>
         </div>
         <div class="col-lg-6 order-lg-1"> <!-- Text column, order-lg-1 to place it on the left on large screens -->
           <h2 class="mb-4">Physical Formats</h2>

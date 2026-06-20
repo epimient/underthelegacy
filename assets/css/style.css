@@ -548,6 +548,41 @@ body::after {
   font-weight: 300;
 }
 
+/* --- Platform Icons --- */
+
+.platform-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.picon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #333;
+  color: #aaa;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.picon:hover {
+  background: #8c304c;
+  border-color: #8c304c;
+  color: #fff;
+}
+
+.picon i,
+.picon svg {
+  font-size: 1.3rem;
+  width: 20px;
+  height: 20px;
+}
+
 /* --- Small Vinyl (Physical Formats) --- */
 
 .formats-visual {
@@ -659,7 +694,7 @@ body::after {
   }
 }
 
-/* Platform Links */
+/* Platform Image (used in Physical Formats section) */
 .platform-image {
   filter: grayscale(0.5) contrast(1.1);
   box-shadow: inset 0 0 15px 5px rgba(0, 0, 0, 0.7);
@@ -669,39 +704,6 @@ body::after {
   max-width: 70%;
   margin: 0 auto;
   display: block;
-}
-
-.platform-links {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.platform-link {
-  display: inline-flex;
-  align-items: center;
-  padding: 15px 20px;
-  color: #ccc;
-  background-color: #0c0c0c;
-  border: 1px solid #222;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-}
-
-.platform-link:hover {
-  background-color: #8c304c;
-  border-color: #8c304c;
-  color: #fff;
-}
-
-.platform-link i,
-.platform-link svg {
-  font-size: 1.5rem;
-  margin-right: 15px;
-  width: 24px;
-  text-align: center;
 }
 
 /* =============================

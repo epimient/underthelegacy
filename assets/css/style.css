@@ -603,9 +603,16 @@ body::after {
 
 .picon i,
 .picon svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.3rem;
   width: 20px;
   height: 20px;
+}
+
+.picon svg {
+  display: block;
 }
 
 /* --- Small Vinyl (Physical Formats) --- */
@@ -1007,7 +1014,7 @@ body::after {
 
 .contact-hero {
   background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-              url('../img/the_band.png') center / cover no-repeat;
+              url('../img/the_band.webp') center / cover no-repeat;
   min-height: 50vh;
   display: flex;
   align-items: center;

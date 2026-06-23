@@ -78,23 +78,7 @@
               <span class="track-duration">5:34</span>
             </div>
           </div>
-          <a href="#" class="btn mt-4">Listen Now!</a>
-          <div class="platform-icons">
-            <a href="#" class="picon" target="_blank" title="Spotify"><i class="bi bi-spotify"></i></a>
-            <a href="#" class="picon" target="_blank" title="Apple Music"><i class="bi bi-apple"></i></a>
-            <a href="#" class="picon" target="_blank" title="YouTube"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="picon" target="_blank" title="YouTube Music"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="picon" target="_blank" title="Tidal">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M2 0v3h3v3h3V3h3V0H2Zm3 5v3h3v3h3V8h3V5H5Z"/>
-              </svg>
-            </a>
-            <a href="#" class="picon" target="_blank" title="Bandcamp">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 20 16">
-                <path d="M4 0h16l-4 16H0L4 0z"/>
-              </svg>
-            </a>
-          </div>
+          <button class="btn mt-4" data-bs-toggle="modal" data-bs-target="#platformsModal">Listen Now!</button>
         </div>
       </div>
     </div>
@@ -174,6 +158,36 @@
 
             <button type="submit" class="btn w-100">Send</button>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Platforms Modal -->
+  <div class="modal fade" id="platformsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Listen on</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="platform-icons">
+            <a href="#" class="picon" target="_blank" title="Spotify"><i class="bi bi-spotify"></i></a>
+            <a href="#" class="picon" target="_blank" title="Apple Music"><i class="bi bi-apple"></i></a>
+            <a href="#" class="picon" target="_blank" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="picon" target="_blank" title="YouTube Music"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="picon" target="_blank" title="Tidal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M2 0v3h3v3h3V3h3V0H2Zm3 5v3h3v3h3V8h3V5H5Z"/>
+              </svg>
+            </a>
+            <a href="#" class="picon" target="_blank" title="Bandcamp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 20 16">
+                <path d="M4 0h16l-4 16H0L4 0z"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>

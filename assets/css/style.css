@@ -1016,10 +1016,104 @@ body::after {
 
 .contact-hero {
   background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-              url('../img/the_band.webp') center / cover no-repeat;
+              url('../img/the_band.png') center / cover no-repeat;
   min-height: 50vh;
   display: flex;
   align-items: center;
+}
+
+/* =============================
+   News Page
+   ============================= */
+
+.lang-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #888;
+  font-weight: 300;
+}
+
+.news-card {
+  background: #0d0d0d;
+  border: 1px solid #1a1a1a;
+  padding: 2rem;
+  transition: border-color 0.3s ease;
+}
+
+.news-card:hover {
+  border-color: #8c304c;
+}
+
+.news-img {
+  filter: grayscale(0.3) contrast(1.1);
+  transition: filter 0.3s ease;
+  border: 1px solid #1a1a1a;
+}
+
+.news-card:hover .news-img {
+  filter: grayscale(0) contrast(1);
+}
+
+.news-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.news-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #8c304c;
+  border: 1px solid #8c304c;
+  padding: 0.2rem 0.6rem;
+}
+
+.news-date {
+  font-size: 0.8rem;
+  color: #666;
+  font-family: 'Inter', sans-serif;
+}
+
+.news-title-en,
+.news-title-es {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.15rem;
+}
+
+.news-title-es {
+  font-size: 1rem;
+  color: #888;
+  letter-spacing: 0.5px;
+  text-transform: none;
+}
+
+.news-body p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.news-body-es {
+  color: #888;
+  padding-top: 0.25rem;
+  border-top: 1px solid #1a1a1a;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 991px) {
+  .news-card {
+    padding: 1.25rem;
+  }
+  .news-img {
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* =============================================

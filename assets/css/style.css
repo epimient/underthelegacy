@@ -1026,15 +1026,6 @@ body::after {
    News Page
    ============================= */
 
-.lang-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  text-transform: none;
-  letter-spacing: 0;
-  color: #888;
-  font-weight: 300;
-}
-
 .news-card {
   background: #0d0d0d;
   border: 1px solid #1a1a1a;
@@ -1079,32 +1070,9 @@ body::after {
   font-family: 'Inter', sans-serif;
 }
 
-.news-title-en,
-.news-title-es {
-  font-family: 'Cinzel', serif;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.15rem;
-}
-
-.news-title-es {
-  font-size: 1rem;
-  color: #888;
-  letter-spacing: 0.5px;
-  text-transform: none;
-}
-
 .news-body p {
   font-size: 0.9rem;
   line-height: 1.7;
-}
-
-.news-body-es {
-  color: #888;
-  padding-top: 0.25rem;
-  border-top: 1px solid #1a1a1a;
-  margin-top: 0.5rem;
 }
 
 @media (max-width: 991px) {

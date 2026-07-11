@@ -115,6 +115,12 @@ nav {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  opacity: 0;
+  animation: heroFadeIn 1.5s ease 0.3s forwards;
+}
+
+@keyframes heroFadeIn {
+  to { opacity: 1; }
 }
 
 .hero-overlay {
@@ -424,7 +430,7 @@ body::after {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: radial-gradient(ellipse at 30% 50%, #0B1017, #05080D 70%, #000);
+  background: radial-gradient(circle at top, #151515, #050505);
   border-bottom: 1px solid #1a1a1a;
   padding: 120px 0 90px;
 }
@@ -573,6 +579,17 @@ body::after {
   font-weight: 300;
 }
 
+.track-play-icon {
+  color: #666;
+  flex-shrink: 0;
+  margin: 0 8px 0 4px;
+  transition: color 0.2s ease;
+}
+
+.track[data-track="the-eternal"]:hover .track-play-icon {
+  color: #8c304c;
+}
+
 /* --- Platform Icons --- */
 
 .platform-icons {
@@ -620,72 +637,39 @@ body::after {
 
 .formats-visual {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.formats-visual .platform-image {
-  max-width: 320px;
-}
+/* --- Format Gallery (CD / EP / Cassette) --- */
 
-.vinyl-disc-sm {
+.format-gallery {
   position: relative;
-  width: 180px;
-  height: 180px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: #8B0000;
-  box-shadow:
-    0 0 0 2px #1a1a1a,
-    0 10px 30px rgba(0,0,0,0.5),
-    inset 0 0 20px rgba(0,0,0,0.5);
-  animation: vinylSpin 12s linear infinite;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1;
 }
 
-.vinyl-disc-sm:hover {
-  animation-play-state: paused;
-}
-
-.vinyl-grooves-sm {
+.format-img {
   position: absolute;
-  inset: 15%;
-  border-radius: 50%;
-  box-shadow:
-    inset 0 0 0 1px #1a1a1a,
-    inset 0 0 0 8px #6B0000,
-    inset 0 0 0 10px #8B0000,
-    inset 0 0 0 18px #6B0000,
-    inset 0 0 0 20px #8B0000,
-    inset 0 0 0 28px #5A0000,
-    inset 0 0 0 30px #8B0000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  filter: grayscale(0.5) contrast(1.1);
+  box-shadow: inset 0 0 15px 5px rgba(0,0,0,0.7);
+  border-radius: 4px;
 }
 
-.vinyl-spindle-sm {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ccc;
-  z-index: 3;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
+.format-img.format-active {
+  opacity: 1;
 }
 
-.vinyl-label-sm {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30%;
-  height: 30%;
-  border-radius: 50%;
-  object-fit: cover;
-  z-index: 2;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+.format-gallery {
+  cursor: pointer;
 }
 
 /* --- Responsive --- */
@@ -708,19 +692,12 @@ body::after {
   .tracklist {
     max-width: none;
   }
-  .formats-visual {
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 575px) {
   .vinyl-disc {
     width: 220px;
     height: 220px;
-  }
-  .vinyl-disc-sm {
-    width: 140px;
-    height: 140px;
   }
   .track-idx {
     width: 30px;

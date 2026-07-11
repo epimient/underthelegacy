@@ -73,8 +73,11 @@
               <span class="track-title">Haunted by Shadows</span>
               <span class="track-duration">6:20</span>
             </div>
-            <div class="track">
+            <div class="track" data-track="the-eternal">
               <span class="track-idx">05</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="track-play-icon">
+                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+              </svg>
               <span class="track-title">The Eternal</span>
               <span class="track-duration">5:34</span>
             </div>
@@ -91,11 +94,10 @@
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
           <div class="formats-visual">
-            <img src="assets/img/music/cover_ashes.webp" alt="Vinyl Record Mockup" class="img-fluid platform-image" loading="lazy">
-            <div class="vinyl-disc-sm">
-              <div class="vinyl-grooves-sm"></div>
-              <div class="vinyl-spindle-sm"></div>
-              <img src="assets/img/music/cover_ashes.webp" alt="Ashes of Eternity" class="vinyl-label-sm">
+            <div class="format-gallery">
+              <img src="assets/img/music/EP.webp" alt="EP" class="img-fluid format-img format-active" data-format="ep">
+              <img src="assets/img/music/CD.webp" alt="CD" class="img-fluid format-img" data-format="cd">
+              <img src="assets/img/music/cassette.webp" alt="Cassette" class="img-fluid format-img" data-format="cassette">
             </div>
           </div>
         </div>
@@ -194,12 +196,27 @@
     </div>
   </div>
 
+  <!-- Bandcamp Modal -->
+  <div class="modal fade" id="bandcampModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-3 text-center">
+          <iframe style="border: 0; width: 100%; height: 120px;" src="" seamless></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="py-5 text-center">
     <p class="small">© Under the Legacy</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>

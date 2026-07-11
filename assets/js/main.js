@@ -308,4 +308,92 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // =============================================
+  // FORMAT GALLERY — Auto-rotate + Click (Album)
+  // =============================================
+  const formatGallery = document.querySelector('.format-gallery');
+  const formatImgs = document.querySelectorAll('.format-img');
+  const formatOrder = ['ep', 'cd', 'cassette'];
+
+  if (formatImgs.length > 0) {
+    let currentIndex = 0;
+    let autoTimer;
+
+    function fadeTo(format) {
+      const current = document.querySelector('.format-img.format-active');
+      const next = document.querySelector(`.format-img[data-format="${format}"]`);
+      if (!next || current === next) return;
+
+      const duration = 500;
+      const start = performance.now();
+
+      next.classList.add('format-active');
+      next.style.opacity = '0';
+
+      function animate(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+
+        if (current) current.style.opacity = `${1 - progress}`;
+        next.style.opacity = `${progress}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          if (current) {
+            current.classList.remove('format-active');
+            current.style.opacity = '';
+          }
+          next.style.opacity = '';
+        }
+      }
+
+      requestAnimationFrame(animate);
+      currentIndex = formatOrder.indexOf(format);
+    }
+
+    function nextFormat() {
+      const next = (currentIndex + 1) % formatOrder.length;
+      fadeTo(formatOrder[next]);
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(nextFormat, 3500);
+    }
+
+    if (formatGallery) {
+      formatGallery.addEventListener('click', () => {
+        nextFormat();
+        resetAuto();
+      });
+    }
+
+    autoTimer = setInterval(nextFormat, 3500);
+  }
+
+  // =============================================
+  // BANDCAMP MODAL — The Eternal
+  // =============================================
+  const bandcampModal = document.getElementById('bandcampModal');
+  const bandcampTriggers = document.querySelectorAll('[data-track="the-eternal"]');
+
+  if (bandcampTriggers.length > 0 && bandcampModal) {
+    let bcModal = null;
+
+    bandcampTriggers.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const iframe = bandcampModal.querySelector('iframe');
+        iframe.src = 'https://bandcamp.com/EmbeddedPlayer/v=2/track=676422717/size=large/bgcol=333333/linkcol=8c304c/tracklist=false/artwork=small/';
+        if (!bcModal) bcModal = new bootstrap.Modal(bandcampModal);
+        bcModal.show();
+      });
+    });
+
+    bandcampModal.addEventListener('hidden.bs.modal', () => {
+      const iframe = bandcampModal.querySelector('iframe');
+      iframe.src = '';
+    });
+  }
+
 });

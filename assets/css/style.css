@@ -886,6 +886,14 @@ body::after {
   color: #888;
 }
 
+/* Poster Zoom */
+.poster-zoom-img {
+  max-height: 70vh;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
 /* =============================
    Dark Modal
    ============================= */

@@ -285,4 +285,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // =============================================
+  // POSTER ZOOM — Past Shows
+  // =============================================
+  const pastShowImgs = document.querySelectorAll('.past-show-img');
+  const posterModalEl = document.getElementById('posterModal');
+
+  if (pastShowImgs.length > 0 && posterModalEl) {
+    let posterModal = null;
+
+    pastShowImgs.forEach(wrapper => {
+      wrapper.addEventListener('click', () => {
+        const img = wrapper.querySelector('img');
+        const modalImg = posterModalEl.querySelector('.poster-zoom-img');
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+        if (!posterModal) {
+          posterModal = new bootstrap.Modal(posterModalEl);
+        }
+        posterModal.show();
+      });
+    });
+  }
+
 });

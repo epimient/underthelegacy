@@ -634,7 +634,7 @@ body::after {
   transition: color 0.2s ease;
 }
 
-.track[data-track="the-eternal"]:hover .track-play-icon {
+.track:hover .track-play-icon {
   color: #8c304c;
 }
 
@@ -1377,4 +1377,49 @@ body::after {
   .vtitle {
     font-size: 0.85rem;
   }
+}
+
+/* =============================
+   Lyrics Modal
+   ============================= */
+
+.track-lyrics-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: #555;
+  flex-shrink: 0;
+  margin: 0 6px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.track-lyrics-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.track .track-lyrics-icon:hover {
+  color: #8c304c;
+}
+
+.lyrics-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: #ccc;
+  white-space: pre-line;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lyrics-placeholder {
+  font-style: italic;
+  color: #666;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 0.95rem;
 }

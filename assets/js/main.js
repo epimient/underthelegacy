@@ -373,20 +373,85 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =============================================
-  // BANDCAMP MODAL — The Eternal
+  // LYRICS MODAL
   // =============================================
-  const bandcampModal = document.getElementById('bandcampModal');
-  const bandcampTriggers = document.querySelectorAll('[data-track="the-eternal"]');
+  const lyrics = {
+    "invocation": null,
+    "from-the-deep": null,
+    "velvet-dust": null,
+    "haunted-by-shadows": null,
+    "the-eternal": `Verse 1\nThe moon is bleeding\nThe skies are red\nI walk among\nThe restless dead\nA sacred vow\nAnd death returns\nDown goes the scalpel\nAs tears burst forth\n\nPre-Chorus\nI'm in Your presence now\nAnd it is so divine\nI know you can't resist\n\nChorus\nEvery knee will bow\nEvery knee will bow\nEvery knee will bow\nBefore Him`
+  };
 
-  if (bandcampTriggers.length > 0 && bandcampModal) {
+  const lyricsIcons = document.querySelectorAll('.track-lyrics-icon');
+  const lyricsModalEl = document.getElementById('lyricsModal');
+
+  if (lyricsIcons.length > 0 && lyricsModalEl) {
+    let lyricsModal = null;
+
+    lyricsIcons.forEach(icon => {
+      icon.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const song = icon.dataset.song;
+        const track = icon.closest('.track');
+        const titleEl = track.querySelector('.track-title');
+        const title = titleEl ? titleEl.textContent : song;
+        const textEl = lyricsModalEl.querySelector('#lyricsModalText');
+        const titleElModal = lyricsModalEl.querySelector('#lyricsModalTitle');
+
+        titleElModal.textContent = title;
+
+        if (lyrics[song]) {
+          textEl.className = 'lyrics-text';
+          textEl.textContent = lyrics[song];
+        } else {
+          textEl.className = 'lyrics-placeholder';
+          textEl.textContent = isES ? 'Letra próximamente' : 'Lyrics coming soon';
+        }
+
+        if (!lyricsModal) {
+          lyricsModal = new bootstrap.Modal(lyricsModalEl);
+        }
+        lyricsModal.show();
+      });
+    });
+
+    lyricsModalEl.addEventListener('hidden.bs.modal', () => {
+      const textEl = lyricsModalEl.querySelector('#lyricsModalText');
+      textEl.textContent = '';
+    });
+  }
+
+  // =============================================
+  // BANDCAMP MODAL — All Tracks
+  // =============================================
+  const bandcampTracks = {
+    "the-eternal": "676422717",
+    "invocation": null,
+    "from-the-deep": null,
+    "velvet-dust": null,
+    "haunted-by-shadows": null
+  };
+
+  const playIcons = document.querySelectorAll('.track-play-icon');
+  const bandcampModal = document.getElementById('bandcampModal');
+
+  if (playIcons.length > 0 && bandcampModal) {
     let bcModal = null;
 
-    bandcampTriggers.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const iframe = bandcampModal.querySelector('iframe');
-        iframe.src = 'https://bandcamp.com/EmbeddedPlayer/v=2/track=676422717/size=large/bgcol=333333/linkcol=8c304c/tracklist=false/artwork=small/';
-        if (!bcModal) bcModal = new bootstrap.Modal(bandcampModal);
-        bcModal.show();
+    playIcons.forEach(icon => {
+      icon.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const track = icon.closest('.track');
+        const trackId = track ? track.dataset.track : null;
+        const bcId = trackId ? bandcampTracks[trackId] : null;
+
+        if (bcId) {
+          const iframe = bandcampModal.querySelector('iframe');
+          iframe.src = `https://bandcamp.com/EmbeddedPlayer/v=2/track=${bcId}/size=large/bgcol=333333/linkcol=8c304c/tracklist=false/artwork=small/`;
+          if (!bcModal) bcModal = new bootstrap.Modal(bandcampModal);
+          bcModal.show();
+        }
       });
     });
 
